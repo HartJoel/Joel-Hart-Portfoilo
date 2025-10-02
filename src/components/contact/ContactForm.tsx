@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Send,
@@ -9,18 +9,16 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import {
-  contactService,
-  ContactMessageInsert,
-} from "@/services/contactService";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    user_name: "",
+    user_email: "",
     subject: "",
     message: "",
   });
@@ -36,8 +34,8 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (
-      !formData.name.trim() ||
-      !formData.email.trim() ||
+      !formData.user_name.trim() ||
+      !formData.user_email.trim() ||
       !formData.subject.trim() ||
       !formData.message.trim()
     ) {
@@ -52,20 +50,15 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const messageData: ContactMessageInsert = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        subject: formData.subject.trim(),
-        message: formData.message.trim(),
-        user_id: null,
-      };
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-      const result = await contactService.insertMessage(messageData);
-
-      if (result.error) {
-        throw new Error(result.error.message || "Failed to send message");
-      }
-
+      console.log("EmailJS Success:", result.text);
+      
       setIsSubmitted(true);
 
       toast({
@@ -75,8 +68,8 @@ const ContactForm = () => {
       });
 
       setFormData({
-        name: "",
-        email: "",
+        user_name: "",
+        user_email: "",
         subject: "",
         message: "",
       });
@@ -85,6 +78,7 @@ const ContactForm = () => {
         setIsSubmitted(false);
       }, 3000);
     } catch (error: unknown) {
+      console.error("EmailJS Error:", error);
       let errorMessage = "An unexpected error occurred. Please try again.";
       if (error instanceof Error) {
         errorMessage = error.message;
@@ -106,11 +100,11 @@ const ContactForm = () => {
       transition={{ duration: 0.5, delay: 0.2 }}
     >
       <div className="glass-panel p-6 rounded-lg">
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1">
               <label
-                htmlFor="name"
+                htmlFor="user_name"
                 className="block text-sm font-medium text-white"
               >
                 Your Name
@@ -119,9 +113,9 @@ const ContactForm = () => {
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 pointer-events-none" />
                 <motion.input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="user_name"
+                  name="user_name"
+                  value={formData.user_name}
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
@@ -136,7 +130,7 @@ const ContactForm = () => {
 
             <div className="space-y-1">
               <label
-                htmlFor="email"
+                htmlFor="user_email"
                 className="block text-sm font-medium text-white"
               >
                 Email
@@ -145,9 +139,9 @@ const ContactForm = () => {
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4 pointer-events-none" />
                 <motion.input
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  id="user_email"
+                  name="user_email"
+                  value={formData.user_email}
                   onChange={handleChange}
                   required
                   disabled={isSubmitting}
