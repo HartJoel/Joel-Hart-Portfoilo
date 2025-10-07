@@ -29,9 +29,9 @@ const Projects = () => {
       title: "Exclusive Store (E-commerce Platform)",
       description:
         "A modern e-commerce platform designed for Babcock students and vendors. Features include product listings, shopping cart, user authentication, and responsive UI built with Next.js and Tailwind CSS.",
-      image:
-        "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=80",
+      image: "/projects/Exclusive.webp",
       tags: ["React.js", "Tailwind CSS", "Firebase"],
+      link: "https://exclusive-store-d6ef8.web.app/",
       code: "https://github.com/HartJoel/Exclusive-Store",
       category: "web",
     },
@@ -40,9 +40,9 @@ const Projects = () => {
       title: "Travel Website",
       description:
         "A responsive travel booking website with destination highlights, booking forms, and a clean, user-friendly interface. Built with Next.js and Tailwind CSS for performance and scalability.",
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-      tags: ["Next.js", "Tailwind CSS"],
+      image: "/projects/Travel.webp",
+      tags: ["Next.js", "Typescript", "Tailwind CSS"],
+      link: "https://travel-sable-pi.vercel.app/",
       code: "https://github.com/HartJoel/travel",
       category: "web",
     },
@@ -54,7 +54,8 @@ const Projects = () => {
       image:
         "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80",
       tags: ["React.js", "Tailwind CSS", "ShadCN"],
-      code: "https://github.com/oxBinaryBrain/An_Income_Tax_Fraud_Detection_Using_AI-ML",
+      link: "",
+      code: "https://github.com/HartJoel/frontend-client",
       category: "web",
     },
   ];
@@ -184,6 +185,7 @@ const Projects = () => {
                   image={project.image}
                   tags={project.tags}
                   code={project.code}
+                  link={project.link}
                   category={project.category}
                   icon={getIcon(project.category)}
                 />

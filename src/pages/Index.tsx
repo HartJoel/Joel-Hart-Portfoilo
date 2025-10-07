@@ -22,21 +22,19 @@ const Index = () => {
     {
       title: "Exclusive Store (E-commerce Platform)",
       description:
-        "A modern e-commerce platform designed for Babcock students and vendors. Features include product listings, shopping cart, user authentication, and responsive UI built with Next.js and Tailwind CSS.",
-      image:
-        "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=800&q=80",
+        "A modern e-commerce platform designed for customer and vendors. Features include product listings, shopping cart, user authentication, and responsive UI built with Next.js and Tailwind CSS.",
+      image: "/projects/Exclusive.webp",
       tags: ["React.js", "Tailwind CSS", "Firebase"],
-      link: "/projects",
+      link: "https://exclusive-store-d6ef8.web.app/",
       code: "https://github.com/HartJoel/Exclusive-Store",
     },
     {
       title: "Travel Website",
       description:
         "A responsive travel booking website with destination highlights, booking forms, and a clean, user-friendly interface. Built with Next.js and Tailwind CSS for performance and scalability.",
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-      tags: ["Next.js", "Tailwind CSS"],
-      link: "/projects",
+      image: "/projects/Travel.webp",
+      tags: ["Next.js", "Typescript", "Tailwind CSS"],
+      link: "https://travel-sable-pi.vercel.app/",
       code: "https://github.com/HartJoel/travel",
     },
     {
@@ -46,36 +44,16 @@ const Index = () => {
       image:
         "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80",
       tags: ["React.js", "Tailwind CSS", "ShadCN"],
-      link: "/projects",
-      code: "https://github.com/oxBinaryBrain/An_Income_Tax_Fraud_Detection_Using_AI-ML",
+      link: "",
+      code: "https://github.com/HartJoel/frontend-client",
     },
-    // {
-    //   title: "Oral Cancer Classification using Neural Networks",
-    //   description:
-    //     "Machine learning model to detect and classify oral cancer levels from images.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-    //   tags: ["Python", "TensorFlow", "Neural Networks"],
-    //   link: "/projects",
-    //   code: "https://github.com/oxBinaryBrain/Oral_Cancer_Classification",
-    // },
-    // {
-    //   title: "Credit Card Fraud Detection",
-    //   description:
-    //     "Machine learning model to analyze whether a credit card transaction is fraudulent or not.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
-    //   tags: ["Python", "ML", "Data Science"],
-    //   link: "/projects",
-    //   code: "https://github.com/oxBinaryBrain/CC-Fraud-Detection",
-    // },
   ];
 
   const techStack = [
     { name: "JavaScript", proficiency: 80 },
     { name: "Tailwind", proficiency: 85 },
     { name: "React.js", proficiency: 80 },
-    { name: "Node.js", proficiency: 75 },
+    { name: "Node.js", proficiency: 50 },
     { name: "Firebase", proficiency: 70 },
     { name: "Next.js", proficiency: 75 },
   ];
@@ -291,13 +269,15 @@ const Index = () => {
                     ))}
                   </div>
                   <div className="flex justify-between">
-                    <Link
-                      to={project.link}
+                    <a
                       className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      View Details
+                      DEMO
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
+                    </a>
                     <a
                       href={project.code}
                       className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
