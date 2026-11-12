@@ -17,21 +17,19 @@ const Academics = () => {
       institution: "Babcock University",
       degree: "Bachelor of Science (B.Sc)",
       field: "Computer Science",
-      duration: "2021 - 2025",
       location: "Ogun State, Nigeria",
-      cgpa: "3.95",
+      cgpa: "Second Class Upper",
       details: [
-        "Specializing in software development and web technologies",
-        "Key courses include Algorithms, Data Structures, Compiler Construction, and Web Development",
-        "Actively working on projects like an eCommerce platform (Babcock Marketplace) and a Hostel Management Portal",
+        "Graduated with Second Class Upper Honours",
+        "Key courses include Algorithms & Data Structures, Database Management Systems, System Design, and Web Development",
+        "Built full-stack web applications as part of coursework and independent projects",
       ],
     },
     {
       id: 2,
-      institution: "3 New Horizon Training Centre",
+      institution: "New Horizons Training Centre",
       degree: "Professional Training",
       field: "Information Technology",
-      duration: "2019 - 2020",
       location: "Nigeria",
       cgpa: "Completed",
       details: [
@@ -45,7 +43,6 @@ const Academics = () => {
       institution: "Kings High School",
       degree: "Secondary School Certificate (SSCE)",
       field: "Science Stream",
-      duration: "2013 - 2019",
       location: "Nigeria",
       cgpa: "Completed",
       details: [
@@ -60,7 +57,6 @@ const Academics = () => {
       id: 1,
       name: "CompTIA IT Fundamentals (ITF+)",
       issuer: "CompTIA",
-      date: "2020",
       description:
         "Introduction to IT concepts including infrastructure, software development, security, and database fundamentals.",
     },
@@ -68,23 +64,20 @@ const Academics = () => {
       id: 2,
       name: "CompTIA A+ (Parts 1 & 2)",
       issuer: "CompTIA",
-      date: "2020",
       description:
         "Comprehensive certification covering hardware, networking, troubleshooting, operating systems, and IT support best practices.",
     },
     {
       id: 3,
       name: "Web & Mobile Development Certificate",
-      issuer: "3 New Horizon Training Centre",
-      date: "2019",
+      issuer: "New Horizons Training Centre",
       description:
         "Practical training in building modern websites and mobile applications, focusing on design, interactivity, and deployment.",
     },
     {
       id: 4,
       name: "Cybersecurity Fundamentals Certificate",
-      issuer: "3 New Horizon Training Centre",
-      date: "2019",
+      issuer: "New Horizons Training Centre",
       description:
         "Introduction to cybersecurity principles including risk management, network security, and data protection.",
     },
@@ -145,7 +138,6 @@ const Academics = () => {
                   institution={edu.institution}
                   degree={edu.degree}
                   field={edu.field}
-                  duration={edu.duration}
                   location={edu.location}
                   cgpa={edu.cgpa}
                   details={edu.details}
@@ -214,7 +206,6 @@ const Academics = () => {
                   key={cert.id}
                   name={cert.name}
                   issuer={cert.issuer}
-                  date={cert.date}
                   description={cert.description}
                   index={index}
                 />

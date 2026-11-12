@@ -7,10 +7,9 @@ import {
   FileCode,
   Database,
   Server,
-  Terminal,
   GitBranch,
   Globe,
-  Tv,
+  Download,
 } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { Link } from "react-router-dom";
@@ -19,10 +18,10 @@ import ParticleBackground from "./ParticleBackground";
 import FloatingElements from "./FloatingElements";
 
 const phrases = [
-  "Front-End Developer",
-  "JavaScript Developer",
-  "Web Developer",
-  "Product-Focused Engineer",
+  "Frontend-Focused Full-Stack JavaScript Developer",
+  "React & TypeScript Engineer",
+  "Full-Stack JavaScript Developer",
+  "Frontend Engineer",
 ];
 
 const HeroSection = () => {
@@ -107,7 +106,7 @@ const HeroSection = () => {
                   repeat: Infinity,
                 }}
               >
-                Welcome to my portfolio
+                Available for frontend & full-stack opportunities
               </motion.span>
             </motion.div>
 
@@ -137,14 +136,14 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.div
-              className="h-12 mb-6"
+              className="min-h-[3rem] md:min-h-[2.5rem] mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <AnimatedText
                 text={phrases[index]}
-                className="text-2xl md:text-3xl font-medium text-muted-foreground"
+                className="text-xl md:text-2xl font-medium text-muted-foreground"
               />
             </motion.div>
 
@@ -154,11 +153,10 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Passionate Front-End Developer with a strong foundation in
-              JavaScript, React.js, and Next.js, and hands-on experience with
-              Node.js and Express. Skilled at creating modern, responsive, and
-              user-focused web applications, blending clean UI/UX design with
-              scalable functionality
+              I build responsive, performant, and maintainable web applications
+              using React, TypeScript, and modern JavaScript technologies — from
+              component-driven frontends to the Node.js and Express APIs behind
+              them.
             </motion.p>
 
             <motion.div
@@ -170,16 +168,16 @@ const HeroSection = () => {
               <motion.div
                 whileHover={{
                   scale: 1.05,
-                  backgroundColor: "#7E69AB",
-                  boxShadow: "0 0 20px rgba(20, 184, 166, 0.5)",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 0 20px rgba(155, 135, 245, 0.3)",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  to="/contact"
+                  to="/projects"
                   className="inline-flex items-center bg-teal-500 text-white px-6 py-3 rounded-lg font-medium transition-all"
                 >
-                  Get in Touch
+                  View Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </motion.div>
@@ -192,11 +190,29 @@ const HeroSection = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  to="/projects"
+                <a
+                  href="/Joel-Hart-Resume.pdf"
+                  download="Joel_Hart_Resume.pdf"
                   className="inline-flex items-center bg-secondary text-foreground px-6 py-3 rounded-lg font-medium transition-all"
                 >
-                  View Projects
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 0 20px rgba(155, 135, 245, 0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center bg-secondary text-foreground px-6 py-3 rounded-lg font-medium transition-all"
+                >
+                  Contact Me
                 </Link>
               </motion.div>
             </motion.div>
@@ -227,58 +243,16 @@ const HeroSection = () => {
               <div className="relative h-full w-full grid grid-cols-6 grid-rows-6 gap-4">
                 {/* Skills grid */}
                 <SkillCard
-                  icon={Code}
-                  title="HTML5"
-                  description="Expert proficiency"
+                  icon={Globe}
+                  title="React"
+                  description="Component-driven UI"
                   className="col-span-3 row-span-2"
                 />
 
                 <SkillCard
                   icon={FileCode}
-                  title="JavaScript"
-                  description="Frontend & backend development"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Globe}
-                  title="React.js"
-                  description="UI Library"
-                  className="col-span-2 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Wind}
-                  title="Tailwind"
-                  description="Styling"
-                  className="col-span-2 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Database}
-                  title="Firebase"
-                  description="Backend Service"
-                  className="col-span-2 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Server}
-                  title="Node.js(basics)"
-                  description="Backend development"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={Tv}
-                  title="UI/UX Design"
-                  description="Interface design & prototyping"
-                  className="col-span-3 row-span-2"
-                />
-
-                <SkillCard
-                  icon={GitBranch}
-                  title="Git & GitGub"
-                  description="development & deployment"
+                  title="TypeScript"
+                  description="Type-safe application code"
                   className="col-span-3 row-span-2"
                 />
 
@@ -286,6 +260,34 @@ const HeroSection = () => {
                   icon={Code}
                   title="Next.js"
                   description="React framework"
+                  className="col-span-2 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Wind}
+                  title="Tailwind CSS"
+                  description="Styling"
+                  className="col-span-2 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Server}
+                  title="Node.js"
+                  description="REST APIs with Express"
+                  className="col-span-2 row-span-2"
+                />
+
+                <SkillCard
+                  icon={Database}
+                  title="PostgreSQL"
+                  description="Prisma ORM & Neon"
+                  className="col-span-3 row-span-2"
+                />
+
+                <SkillCard
+                  icon={GitBranch}
+                  title="Git & GitHub"
+                  description="Version control & CI/CD"
                   className="col-span-3 row-span-2"
                 />
               </div>

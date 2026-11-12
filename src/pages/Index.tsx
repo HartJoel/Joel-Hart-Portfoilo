@@ -8,8 +8,8 @@ import {
   GraduationCap,
   Briefcase,
   Star,
-  ExternalLink,
   Github,
+  Store,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -18,44 +18,24 @@ const Index = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const featuredProjects = [
-    {
-      title: "Exclusive Store (E-commerce Platform)",
-      description:
-        "A modern e-commerce platform designed for customer and vendors. Features include product listings, shopping cart, user authentication, and responsive UI built with Next.js and Tailwind CSS.",
-      image: "/projects/Exclusive.webp",
-      tags: ["React.js", "Tailwind CSS", "Firebase"],
-      link: "https://exclusive-store-d6ef8.web.app/",
-      code: "https://github.com/HartJoel/Exclusive-Store",
-    },
-    {
-      title: "Travel Website",
-      description:
-        "A responsive travel booking website with destination highlights, booking forms, and a clean, user-friendly interface. Built with Next.js and Tailwind CSS for performance and scalability.",
-      image: "/projects/Travel.webp",
-      tags: ["Next.js", "Typescript", "Tailwind CSS"],
-      link: "https://travel-sable-pi.vercel.app/",
-      code: "https://github.com/HartJoel/travel",
-    },
-    {
-      title: "Lead Management System",
-      description:
-        "A web-based system designed to manage and track business leads efficiently. Includes lead capture, categorization, and follow-up reminders with a responsive UI and backend integration.",
-      image:
-        "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=800&q=80",
-      tags: ["React.js", "Tailwind CSS", "ShadCN"],
-      link: "",
-      code: "https://github.com/HartJoel/frontend-client",
-    },
-  ];
+  const featuredProject = {
+    title: "Hart Mart",
+    category: "Full-Stack E-commerce Marketplace",
+    description:
+      "A multi-vendor e-commerce marketplace with seller onboarding, product listings, admin oversight, and a customer shopping experience. Built with a React and TypeScript frontend and a Node.js, Express, and Prisma backend on PostgreSQL.",
+    image: "/projects/hart-mart.png",
+    tags: ["React", "TypeScript", "Node.js", "Express.js", "PostgreSQL"],
+    link: "https://hart-mart-frontend.vercel.app/",
+    code: "https://github.com/HartJoel/HartMart-frontend",
+  };
 
   const techStack = [
-    { name: "JavaScript", proficiency: 80 },
-    { name: "Tailwind", proficiency: 85 },
-    { name: "React.js", proficiency: 80 },
-    { name: "Node.js", proficiency: 50 },
-    { name: "Firebase", proficiency: 70 },
-    { name: "Next.js", proficiency: 75 },
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
   ];
 
   return (
@@ -77,11 +57,10 @@ const Index = () => {
             </span>
             <h2 className="text-4xl font-bold mb-6">Who I Am</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground">
-              I’m a Front-End Developer passionate about building modern,
-              responsive, and user-friendly web applications. With a strong
-              foundation in JavaScript, React.js, and Next.js, I focus on
-              creating clean, interactive interfaces that deliver great user
-              experiences.
+              I'm a frontend-focused Full-Stack JavaScript Developer
+              building intuitive, performant web applications with React,
+              TypeScript, and Next.js, backed by Node.js and Express APIs
+              where the project calls for it.
             </p>
           </motion.div>
 
@@ -97,12 +76,12 @@ const Index = () => {
                 <Code className="w-8 h-8 text-teal-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
-                Web Development
+                Frontend Engineering
               </h3>
               <p className="text-muted-foreground text-center">
-                Experienced in building modern, responsive web applications
-                using React.js, Next.js, and Firebase. Skilled in creating clean
-                UIs, interactive features, and optimized front-end performance.
+                Building component-driven, responsive interfaces with React,
+                Next.js, and TypeScript, backed by thoughtful state
+                management and API integration.
               </p>
             </motion.div>
 
@@ -117,12 +96,11 @@ const Index = () => {
                 <GraduationCap className="w-8 h-8 text-teal-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
-                Computer Science
+                Full-Stack Development
               </h3>
               <p className="text-muted-foreground text-center">
-                Strong foundation in programming principles, algorithms, and
-                data structures, with hands-on knowledge of Python, JavaScript,
-                and C++.
+                Developing REST APIs with Node.js and Express, and working
+                with PostgreSQL and Prisma to connect frontend and backend.
               </p>
             </motion.div>
 
@@ -137,11 +115,11 @@ const Index = () => {
                 <Briefcase className="w-8 h-8 text-teal-400" />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-center">
-                Software Development Skills
+                Engineering Practices
               </h3>
               <p className="text-muted-foreground text-center">
-                Knowledge of version control with Git/GitHub, debugging, and
-                testing web applications.
+                Version control with Git and GitHub, code review, testing,
+                and a focus on performance and maintainable code.
               </p>
             </motion.div>
           </div>
@@ -179,43 +157,29 @@ const Index = () => {
             </span>
             <h2 className="text-4xl font-bold mb-6">Tech Stack</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground">
-              A collection of technologies I work with to build web applications
-              and solve complex problems.
+              The core technologies I use to build web applications and
+              solve complex problems.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
             {techStack.map((tech, index) => (
               <motion.div
-                key={tech.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={tech}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.07 }}
                 viewport={{ once: true }}
-                className="glass-panel p-6 rounded-lg"
+                className="glass-panel px-6 py-3 rounded-lg"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-lg font-medium">{tech.name}</h3>
-                  <span className="text-sm text-muted-foreground">
-                    {tech.proficiency}%
-                  </span>
-                </div>
-                <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-teal-500"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${tech.proficiency}%` }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                    viewport={{ once: true }}
-                  />
-                </div>
+                <span className="text-lg font-medium">{tech}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Featured Project */}
       <section className="py-24 bg-secondary/50" id="projects">
         <div className="container mx-auto px-4">
           <motion.div
@@ -228,69 +192,70 @@ const Index = () => {
             <span className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 mb-4">
               Portfolio
             </span>
-            <h2 className="text-4xl font-bold mb-6">Featured Projects</h2>
+            <h2 className="text-4xl font-bold mb-6">Featured Project</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground">
-              A selection of my recent web development and programming projects.
+              A full-stack e-commerce marketplace built end to end.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="glass-panel rounded-lg overflow-hidden"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="glass-panel rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2"
+            >
+              <div className="relative h-64 md:h-full overflow-hidden">
+                <div className="absolute top-3 left-3 bg-secondary/80 backdrop-blur-sm px-3 py-1 rounded-full flex items-center text-xs font-medium z-10">
+                  <Store className="w-4 h-4 mr-1.5" />
+                  {featuredProject.category}
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs py-1 px-3 bg-secondary rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between">
-                    <a
-                      className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                <img
+                  src={featuredProject.image}
+                  alt={featuredProject.title}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="p-6 flex flex-col justify-center">
+                <h3 className="text-xl font-semibold mb-2">
+                  {featuredProject.title}
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  {featuredProject.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {featuredProject.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs py-1 px-3 bg-secondary rounded-full"
                     >
-                      DEMO
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                    <a
-                      href={project.code}
-                      className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="mr-1.5 h-4 w-4" />
-                      Source Code
-                    </a>
-                  </div>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
+                <div className="flex gap-6">
+                  <a
+                    className="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors"
+                    href={featuredProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Live Demo
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                  <a
+                    href={featuredProject.code}
+                    className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="mr-1.5 h-4 w-4" />
+                    Source Code
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           <motion.div

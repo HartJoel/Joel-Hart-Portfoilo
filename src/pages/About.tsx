@@ -18,14 +18,14 @@ const About = () => {
   }, []);
 
   const skills = [
-    { name: "JavaScript", level: "Advanced" },
-    { name: "React.js", level: "Intermediate" },
-    { name: "Node.js", level: "Beginner" },
-    { name: "Next.js", level: "Intermediate" },
-    { name: "Firebase", level: "Intermediate" },
-    { name: "Appwrite", level: "Intermediate" },
-    { name: "CSS", level: "Intermediate" },
-    { name: "Tailwind", level: "Intermediate" },
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Tailwind CSS",
   ];
 
   return (
@@ -46,8 +46,8 @@ const About = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground">
-                I'm a Web Developer passionate about creating innovative
-                solutions through programming and technology.
+                A frontend-focused Full-Stack JavaScript Developer building
+                maintainable, performant web applications end to end.
               </p>
             </div>
           </motion.div>
@@ -91,23 +91,34 @@ const About = () => {
                   >
                     Hart Joel
                   </motion.span>
-                  , a Web developer specializing in Frontend development
+                  , a frontend-focused Full-Stack JavaScript Developer
+                  passionate about building intuitive, performant, and
+                  maintainable web applications that solve real-world
+                  problems.
                 </p>
                 <p>
-                  My journey in programming began with an interest in solving
-                  complex problems. This led me to explore various programming
-                  languages and technologies, with a focus on web development.
+                  My primary expertise lies in frontend engineering,
+                  particularly building modern interfaces with React,
+                  TypeScript, Next.js, and Tailwind CSS. I focus on
+                  component-driven architecture, reusable UI systems,
+                  efficient state management, API integration, and
+                  delivering responsive experiences across devices.
                 </p>
                 <p>
-                  I'm passionate about building web applications and software
-                  that is not only functional but also intuitive and
-                  user-friendly. I believe in continuous learning and staying
-                  updated with the latest technologies.
+                  Beyond the frontend, I have hands-on experience developing
+                  backend services and integrating REST APIs using Node.js
+                  and Express.js, working with relational databases such as
+                  PostgreSQL, and implementing application features that
+                  connect the entire software development lifecycle.
                 </p>
                 <p>
-                  When I'm not coding, I enjoy exploring new technologies,
-                  solving problems, contributing to projects projects and
-                  playing sports.
+                  My professional experience includes contributing to
+                  enterprise applications at LAPO Microfinance Bank and
+                  independently developing commercial applications such as
+                  Hart Mart, a multi-vendor e-commerce platform. I care about
+                  writing clean code, making thoughtful engineering
+                  decisions, optimizing application performance, and
+                  building software that is easy to maintain and extend.
                 </p>
               </div>
             </motion.div>
@@ -127,10 +138,10 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {skills.map((skill, index) => (
                 <motion.div
-                  key={skill.name}
+                  key={skill}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 * index }}
@@ -142,22 +153,11 @@ const About = () => {
                   className="glass-panel p-6 rounded-lg text-center"
                 >
                   <motion.h3
-                    className="font-semibold mb-2"
+                    className="font-semibold"
                     whileHover={{ color: "#9b87f5" }}
                   >
-                    {skill.name}
+                    {skill}
                   </motion.h3>
-                  <span
-                    className={`text-xs py-1 px-3 rounded-full ${
-                      skill.level === "Advanced"
-                        ? "bg-brand-purple/20 text-brand-purple"
-                        : skill.level === "Intermediate"
-                        ? "bg-blue-500/20 text-blue-400"
-                        : "bg-green-500/20 text-green-400"
-                    }`}
-                  >
-                    {skill.level}
-                  </span>
                 </motion.div>
               ))}
             </div>
@@ -176,10 +176,10 @@ const About = () => {
               <InfoCard icon={User} title="Personal Interests">
                 <ul className="space-y-2 text-muted-foreground">
                   {[
-                    "Exploring new technologies",
-                    "Solving challenges",
-                    "Project contributions",
-                    "Web development projects",
+                    "Exploring new frontend technologies",
+                    "Solving complex technical problems",
+                    "Open-source contributions",
+                    "Building side projects",
                   ].map((interest, i) => (
                     <motion.li
                       key={i}
@@ -213,13 +213,13 @@ const About = () => {
                 </ul>
               </InfoCard>
 
-              <InfoCard icon={GraduationCap} title="Education Journey">
+              <InfoCard icon={GraduationCap} title="Technical Foundation">
                 <ul className="space-y-2 text-muted-foreground">
                   {[
-                    "Computer Science fundamentals",
+                    "B.Sc. Computer Science, Babcock University",
                     "Data structures and algorithms",
-                    "Software development",
-                    "web development",
+                    "Software development lifecycle",
+                    "System design fundamentals",
                   ].map((journey, i) => (
                     <motion.li
                       key={i}
@@ -233,13 +233,13 @@ const About = () => {
                 </ul>
               </InfoCard>
 
-              <InfoCard icon={BookOpen} title="Future Goals">
+              <InfoCard icon={BookOpen} title="Professional Goals">
                 <ul className="space-y-2 text-muted-foreground">
                   {[
-                    "Mastering advanced development techniques",
-                    "Building impactful web applications",
+                    "Deepening frontend architecture expertise",
+                    "Building impactful, scalable web applications",
                     "Contributing to open-source projects",
-                    "Exploring blockchain development",
+                    "Growing into senior frontend engineering roles",
                   ].map((goal, i) => (
                     <motion.li
                       key={i}

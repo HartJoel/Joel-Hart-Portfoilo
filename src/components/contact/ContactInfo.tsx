@@ -12,7 +12,7 @@ const ContactInfo = () => {
     {
       icon: <MapPin className="h-5 w-5 text-brand-purple" />,
       title: "Location",
-      details: "Lagos, Nigeia",
+      details: "Lagos, Nigeria",
       link: "https://maps.google.com/?q=Lagos",
     },
   ];

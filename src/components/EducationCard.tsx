@@ -1,25 +1,23 @@
 
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, MapPin, Award } from "lucide-react";
+import { GraduationCap, MapPin, Award } from "lucide-react";
 
 interface EducationCardProps {
   institution: string;
   degree: string;
   field: string;
-  duration: string;
   location: string;
   cgpa: string;
   details: string[];
   index: number;
 }
 
-const EducationCard = ({ 
-  institution, 
-  degree, 
-  field, 
-  duration, 
-  location, 
-  cgpa, 
+const EducationCard = ({
+  institution,
+  degree,
+  field,
+  location,
+  cgpa,
   details,
   index
 }: EducationCardProps) => {
@@ -50,16 +48,12 @@ const EducationCard = ({
           
           <div className="flex flex-wrap gap-y-2 gap-x-4 mt-2 text-sm text-muted-foreground">
             <div className="flex items-center">
-              <Calendar className="h-4 w-4 mr-1" />
-              {duration}
-            </div>
-            <div className="flex items-center">
               <MapPin className="h-4 w-4 mr-1" />
               {location}
             </div>
             <div className="flex items-center">
               <Award className="h-4 w-4 mr-1" />
-              CGPA: {cgpa}
+              {cgpa}
             </div>
           </div>
         </div>

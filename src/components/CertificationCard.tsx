@@ -1,16 +1,15 @@
 
 import { motion } from "framer-motion";
-import { Award, School, Calendar } from "lucide-react";
+import { Award, School } from "lucide-react";
 
 interface CertificationCardProps {
   name: string;
   issuer: string;
-  date: string;
   description: string;
   index: number;
 }
 
-const CertificationCard = ({ name, issuer, date, description, index }: CertificationCardProps) => {
+const CertificationCard = ({ name, issuer, description, index }: CertificationCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
@@ -31,9 +30,6 @@ const CertificationCard = ({ name, issuer, date, description, index }: Certifica
           <div className="flex items-center text-sm text-muted-foreground mb-3">
             <School className="h-4 w-4 mr-1" />
             <span>{issuer}</span>
-            <span className="mx-2">•</span>
-            <Calendar className="h-4 w-4 mr-1" />
-            <span>{date}</span>
           </div>
           <p className="text-muted-foreground">{description}</p>
         </div>

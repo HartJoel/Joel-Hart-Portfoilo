@@ -33,66 +33,65 @@ const Resume = () => {
       institution: "Babcock University",
       degree: "Bachelor of Science (B.Sc)",
       field: "Computer Science",
-      duration: "2021 - 2025",
-      gpa: "3.98",
+      gpa: "Second Class Upper",
       location: "Ogun State, Nigeria",
+      courses: [
+        "Algorithms & Data Structures",
+        "Web Development",
+        "System Design",
+        "Database Management Systems",
+        "Software Development Lifecycle",
+        "System Administration",
+      ],
     },
     {
-      institution: "3 New Horizon Training Centre",
+      institution: "New Horizons Training Centre",
       degree: "Professional Training",
       field: "Information Technology",
-      duration: "2019 - 2020",
       gpa: "Completed",
       location: "Nigeria",
+      courses: [
+        "Web & Mobile Development",
+        "Cybersecurity Fundamentals",
+      ],
     },
     {
       institution: "Kings High School",
       degree: "Secondary School Certificate (SSCE)",
       field: "Science Stream",
-      duration: "-",
       gpa: "Completed",
       location: "Nigeria",
+      courses: ["Physics", "Chemistry", "Mathematics", "Computer Science"],
     },
   ];
 
   const experience = [
     {
-      position: "Freelance Front-End Developer",
-      company: "Self-employed",
-      duration: "2023 - Present",
+      position: "Full-Stack Developer (Frontend Lead)",
+      company: "LAPO Microfinance Bank, Lagos, Nigeria",
+      duration: "Jan 2024 – Mar 2025; Jul 2025 – Present",
       description:
-        "Building responsive and user-friendly web applications for clients and personal projects, with a focus on clean UI/UX and modern front-end technologies.",
+        "Frontend lead for 5 internal business applications and builder of the Savings Flex section of the bank's customer-facing retail platform.",
       responsibilities: [
-        "Developed websites and applications using React.js, Next.js, and Tailwind CSS",
-        "Created responsive designs and interactive features for better user experience",
-        "Managed client requirements, timelines, and deliverables",
-        "Explored AI-powered solutions and integrations for web projects",
+        "Lead frontend development for 5 internal business applications (scholarship examination, visitor management, staff health and welfare, budget, and litigation systems) used by 500+ staff across 10+ departments",
+        "Built the Savings Flex section of the bank's customer-facing web retail platform in React and TypeScript, meeting WCAG 2.1 AA with semantic HTML, keyboard navigation and ARIA labelling",
+        "Cut Savings Flex's initial bundle size by 35% and raised its Lighthouse performance score from 62 to 90+ through code splitting, lazy loading and image optimisation",
+        "Applied OWASP practices to customer financial data, adding client- and server-side input validation and safe handling of account information in forms and API calls",
+        "Delivered the visitor management system end to end: React frontend and ASP.NET Core (C#) REST APIs on SQL Server for authentication, reporting and visitor records",
+        "Refactored legacy code in the budget and litigation applications into 30+ reusable TypeScript components, reducing user-reported UI defects by 40%",
+        "Introduced Jest and React Testing Library unit tests and Cypress end-to-end tests (70% coverage on core flows), run through GitHub Actions CI/CD on every pull request with Docker-based environments",
+        "Review pull requests, mentor 2 junior developers, and turn stakeholder requirements into Figma designs and technical specifications within a 5-developer team",
       ],
     },
     {
-      position: "Junior Frontend Developer",
-      company: "LAPO Microfinance Bank (SIWES)",
-      duration: "Jan 2024 - December 2024",
+      position: "Full-Stack Developer (Freelance)",
+      company: "Remote",
+      duration: "2023 – Present",
       description:
-        "Worked in the web development department, contributing to application development, testing, and IT support while collaborating with stakeholders.",
+        "Delivering production web applications for e-commerce and education clients with React, Next.js, TypeScript and Tailwind CSS.",
       responsibilities: [
-        "Assisted in building and testing internal web applications",
-        "Designed and implemented responsive front-end pages using React.js",
-        "Participated in requirement gathering and stakeholder meetings",
-        "Provided IT Help Desk support (user account management, password resets, and platform support)",
-      ],
-    },
-    {
-      position: "Open Source & Personal Projects",
-      company: "GitHub / Personal",
-      duration: "2022 - Present",
-      description:
-        "Contributing to open-source projects and developing personal applications to strengthen technical skills and explore new technologies.",
-      responsibilities: [
-        "Created and maintained portfolio projects such as an E-commerce platform, Travel website, and Lead Management System",
-        "Practiced version control and collaboration using Git & GitHub",
-        "Explored Node.js and Express.js for backend development",
-        "Applied UI/UX design principles in projects using Figma",
+        "Delivered 12+ production web applications for e-commerce and education clients with React, Next.js, TypeScript and Tailwind CSS, including Firebase authentication and REST API integration",
+        "Retained 4 repeat clients through ongoing feature work, maintenance and performance fixes on live applications",
       ],
     },
   ];
@@ -101,30 +100,22 @@ const Resume = () => {
     {
       name: "CompTIA IT Fundamentals (ITF+)",
       issuer: "CompTIA",
-      date: "2022",
       skills: "IT Concepts, Infrastructure, Applications, Security",
-      credential: "CompTIA-ITF+-2022",
     },
     {
       name: "CompTIA A+ (Parts 1 & 2)",
       issuer: "CompTIA",
-      date: "2022",
       skills: "IT Support, Hardware, Networking, Troubleshooting",
-      credential: "CompTIA-A+-2022",
     },
     {
       name: "Web & Mobile Development Certificate",
       issuer: "New Horizons Training Centre",
-      date: "2021",
       skills: "HTML, CSS, JavaScript, Mobile Development",
-      credential: "NH-WMD-2021",
     },
     {
       name: "Cybersecurity Fundamentals Certificate",
       issuer: "New Horizons Training Centre",
-      date: "2021",
       skills: "Cybersecurity, Risk Management, Threat Analysis",
-      credential: "NH-CF-2021",
     },
   ];
 
@@ -157,27 +148,27 @@ const Resume = () => {
 
   const resumeHighlights = [
     {
-      title: "Frontend Developer",
+      title: "Frontend Engineering",
       description:
-        "Skilled in building modern, responsive, and interactive user interfaces with React.js, Next.js, and Tailwind CSS.",
+        "Building modern, accessible, and performant interfaces with React, TypeScript, Next.js, and Tailwind CSS.",
       icon: <Code className="h-8 w-8 text-brand-purple" />,
     },
     {
-      title: "JavaScript Enthusiast",
+      title: "Full-Stack Development",
       description:
-        "Strong foundation in JavaScript and its ecosystem, with experience in ES6+, DOM manipulation, and state management.",
+        "Hands-on experience with Node.js, Express.js, Prisma, and PostgreSQL to build and connect REST APIs end to end.",
       icon: <Cpu className="h-8 w-8 text-brand-purple" />,
     },
     {
-      title: "UI/UX Design Knowledge",
+      title: "Performance & Accessibility",
       description:
-        "Experience using Figma to design intuitive, user-friendly interfaces and applying UI/UX principles to development.",
+        "Improving Lighthouse scores, reducing bundle size, and meeting WCAG 2.1 AA standards on production applications.",
       icon: <Palette className="h-8 w-8 text-brand-purple" />,
     },
     {
-      title: "Problem Solver",
+      title: "Quality & Collaboration",
       description:
-        "Hands-on experience debugging, testing, and optimizing applications for performance, scalability, and usability.",
+        "Testing with Jest, React Testing Library, and Cypress, reviewing pull requests, and mentoring junior developers.",
       icon: <Wrench className="h-8 w-8 text-brand-purple" />,
     },
   ];
@@ -264,9 +255,6 @@ const Resume = () => {
                   {edu.gpa}
                 </div>
                 <div className="text-sm text-muted-foreground mt-2">
-                  {edu.duration}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
                   {edu.location}
                 </div>
               </div>
@@ -274,53 +262,12 @@ const Resume = () => {
             <div className="mt-4 pl-4 border-l-2 border-brand-purple/30">
               <h4 className="font-medium mb-2">Key Courses:</h4>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {edu.institution.includes("Presidency") ? (
-                  <>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Artificial Intelligence & Machine Learning
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Data Structures & Algorithms
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Computer Vision Systems
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Web Development
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Database Management Systems
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Deep Learning
-                    </li>
-                  </>
-                ) : (
-                  <>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Physics
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Chemistry
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Mathematics
-                    </li>
-                    <li className="text-sm flex items-center">
-                      <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
-                      Computer Science
-                    </li>
-                  </>
-                )}
+                {edu.courses.map((course) => (
+                  <li key={course} className="text-sm flex items-center">
+                    <span className="h-1.5 w-1.5 bg-brand-purple rounded-full mr-2"></span>
+                    {course}
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
@@ -399,7 +346,7 @@ const Resume = () => {
               <div>
                 <h3 className="font-semibold">{cert.name}</h3>
                 <div className="text-sm text-muted-foreground mb-2">
-                  {cert.issuer} • {cert.date}
+                  {cert.issuer}
                 </div>
                 <div className="flex flex-wrap gap-2 mb-2">
                   {cert.skills.split(", ").map((skill) => (
@@ -411,11 +358,6 @@ const Resume = () => {
                     </span>
                   ))}
                 </div>
-                {cert.credential && (
-                  <div className="text-xs text-muted-foreground">
-                    Credential ID: {cert.credential}
-                  </div>
-                )}
               </div>
             </div>
           </motion.div>
@@ -442,9 +384,10 @@ const Resume = () => {
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-lg text-muted-foreground">
-                I'm an aspiring developer specializing in web development. My
-                goal is to leverage these technologies to create innovative
-                solutions for real-world problems.
+                Frontend-focused Full-Stack JavaScript Developer with
+                experience building production applications in banking and
+                commercial settings, from component-driven React interfaces
+                to the Node.js APIs behind them.
               </p>
             </div>
           </motion.div>
